@@ -4,6 +4,7 @@ const buttons = document.querySelector('.buttons');
 const stop = document.querySelector('.cli');
 const clear = document.querySelector('.clear');
 const set = document.querySelector('.set');
+const cock = document.querySelector('.cock');
 
 var x = document.getElementById("myAudio"); 
 var timesPlayed = 0;
@@ -69,6 +70,8 @@ numbers.addEventListener('click', (e)=>{
     return str, SECONDS; 
 });
 
+
+// make the cock sing :)
 function playAudio (){
     x.play();
     timesPlayed++;
@@ -90,7 +93,7 @@ buttons.addEventListener('click', (e)=>{
         time.innerHTML = '';
         SECONDS = 0;
         set.classList.remove('hide');
-        
+        cock.classList.remove('move_cock');
     }
     if(e.target.classList == 'set' && SECONDS){
         
@@ -105,14 +108,17 @@ buttons.addEventListener('click', (e)=>{
                 clear.classList.remove('hide');
                 time.innerHTML = `00s`;
                 playAudio();
+                cock.classList.add('move_cock');
+                cock.src= "./Animated_Cockerel 2.gif?"+new Date().getTime();
+
             
             }
             let minute = Math.floor(SECONDS / 60) % 60;
-            minute = minute < 10 ? `0${minute}` : minute;
+                minute = minute < 10 ? `0${minute}` : minute;
             let secunde = SECONDS % 60;
-            secunde = secunde < 10 ? `0${secunde}` : secunde;
+                secunde = secunde < 10 ? `0${secunde}` : secunde;
             let ore = Math.floor((SECONDS / 60) / 60);
-            ore = ore < 10 ? `0${ore}` : ore;
+                ore = ore < 10 ? `0${ore}` : ore;
         
             time.innerHTML = `${ore}hr ${minute}min ${secunde}s`;
             SECONDS--;
