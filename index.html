@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikey's Countdown Timer</title>
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="timer_display">
+            <img class="honeypot" src="./img/honeypot.png" alt="">
+            <h2 class="time"></h2>
+        </div>
+        <div class="side_panel">
+            <div class="numbers">
+                <div class="one23">
+                    <img src="./img/1.png" data-numb ="1" alt="">
+                    <img src="./img/2.png" data-numb ="2" alt="">
+                    <img src="./img/3.png" data-numb ="3" alt="">
+                </div>
+                <div class="four56">
+                    <img src="./img/4.png" data-numb ="4" alt="">
+                    <img src="./img/5.png" data-numb ="5" alt="">
+                    <img src="./img/6.png" data-numb ="6" alt="">
+                </div>
+                <div class="seven89">
+                    <img src="./img/7.png" data-numb ="7" alt="">
+                    <img src="./img/8.png" data-numb ="8" alt="">
+                    <img src="./img/9.png" data-numb ="9" alt="">
+                </div>
+                <div class="zero">
+                    <img src="./img/0.png" data-numb ="0" alt="">
+                </div>    
+            </div>
+            <div class="buttons">
+                <button class="set">START</button>
+                <button class="clear">CLEAR</button>
+                <button class="cli">PAUSE</button>
+            </div>
+        </div>
+        
+    </div>
+    <audio id="myAudio">
+        <source src="crowing.mp3" type="audio/mpeg">
+      </audio>
+
+
+    <script src="app.js">
+    </script>
+</body>
+</html>
