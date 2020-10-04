@@ -1,140 +1,92 @@
-*{
-    margin: 0;
+margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Luckiest Guy', cursive;
 }
-
-img{cursor: pointer;}
-
-
-
 .container{
-    margin: 4rem auto;
     width: 80vw;
-    max-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.cock{
-    width: 150%;
-    position: absolute;
-    transform: translateY(-200%);
-    transition:all .2s linear;
-}
-
-.timer_display{
-    width: 50%;
-    height: 50%;
-    position: relative;
-}
-.time{
-    position: absolute;
-    top:52%;
-    left: 34%;
-    font-size: 2.9vw;
-}
-.side_panel{
-    max-width: 50%;
-    max-height: 50%;
-}
-.honeypot{
-    width: 90%;
-
-}
-
-.numbers{
-    width: 100%;
-    height: 50%;
+    margin: 2rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
 }
-
-.one23, .four56, .seven89, .zero{
+.timer_display, .side_panel, .numbers{
     width: 100%;
-    display: flex;
-    justify-content: center;
+    position: relative;
 }
-.numbers img{
-    max-width: 20%;
-    max-height: 100px;
-    margin: .3rem;
+.timer_display img{
+    width: 100%;
+}
+.cock{
+    position: absolute;
+    top: 28%;
+    left: 10%;
+    transform: translateY(-300%);
+}
+.move_cock{
+    transform: translateY(0);
+}
+.timer_display h2{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translateX(-35%);
+    font-size: 6.6vw;
+}
+.numbers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1.5rem;
 }
 .numbers img:hover{
     transform: scale(1.1);
  }
-.set, .clear {
-    border: none;
-    background: transparent;
-    outline: transparent;
+.one23, .four56, .seven89, .zero, .buttons, .bottom, .sidebysidebtn{
+    width: 100%;
+    margin: .1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.one23 img, .four56 img, .seven89 img, .zero img{
+    width: 20%;
     cursor: pointer;
-}
-.set, .clear {
-    max-width: 30%;
-    max-height: 200px;
-}
-
-.buttons img{
-    pointer-events: none;
-    max-width: 50%;
-    max-height: 200px;
 }
 .buttons{
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    margin-left: 1.5rem;
+    flex-direction: column;
 }
-
-
-.timer_display{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-}
-#form{
-    display: flex;
-    justify-content: space-around;
-    height: 50%;
-}
-#hr, #min, #sec {
-    height: 30px;
-    width: 90px;
-    margin: 0 .5rem;
-    border: none;
-    border-bottom: 1px solid gray;
-    background: transparent;
-    outline: transparent;
-    font-size: 1rem;
-    text-align: center;
-}
-
-
-.cli, .set, .clear{
-    font-family: 'Luckiest Guy', cursive;
-    width: 15vw;
-    height: 5vh;
-    padding-top:.3rem ;
-    font-size: 2.5vw;
-    border-radius: 15px;
+.set, .clear, .cli{
     border: 1px solid black;
+    border-radius: 5px;
     outline: transparent;
     cursor: pointer;
-    margin: .3rem .3rem;
-        
+    background: transparent;
+    width: 25%;
+    padding-top: .4rem;
+    font-size: 4vw;
+}
+.set{margin-right: .250rem;}
+.clear{margin-left: .250rem;}
+.set:hover{
+    transform: scale(1.05);
+}
+.clear:hover{
+    transform: scale(1.05);
+}
+.cli:hover{
+    transform: scale(1.05);
+}
+.set, .clear{
+    margin-bottom: .2rem;
 }
 .cli{    background:rgba(194, 58, 8, 0.899);}
-.set{    background:rgba(255, 255, 0, 1);
-}
-.clear{    background:rgba(255, 133, 0, 1);
-}
+.set{    background:rgba(255, 255, 0, 1);}
+.clear{    background:rgba(255, 133, 0, 1);}
 
 /* utility classes  */
 .hide{
@@ -146,6 +98,13 @@ img{cursor: pointer;}
     opacity: 1;
 }
 
-.move_cock{
-    transform: translateY(0);
-}
+@media only screen and (min-width: 600px){
+
+    .container{flex-direction: row;}
+    .timer_display{ width: 65%;}
+    .side_panel{ width: 35%;}
+    .timer_display h2{ font-size: 4.3vw;}
+    .set, .clear, .cli{
+        font-size: 2vw;
+        padding-top: .4rem;
+    }
