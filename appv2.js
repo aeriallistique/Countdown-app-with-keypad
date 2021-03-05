@@ -3,9 +3,7 @@ const $$ = (q) => document.querySelectorAll(q);
 
 class Utils { 
     static checkValidTime(time) {
-        // regular expression, you must know this: https://regex101.com/
         const rex = /^([0-9]+\:)?([0-9]{1,2}\:)?[0-9]{1,2}$/gi
-        // always check input
         if (!time || !time.match(rex)) {
             return false;
         }
