@@ -65,6 +65,7 @@ class Timer {
         this.controls.start.addEventListener('click', () => {
             this.startTimer();
             this.blockButtonsAfterStart(this.controls.clear, this.controls.start);
+            this.unblockButtonsAfterPause(this.controls.pause, null);
         });
         this.controls.pause.addEventListener('click', () =>{ 
             this.clearInterval()
@@ -97,8 +98,10 @@ class Timer {
     blockButtonsAfterStart(clear, start){
         clear.style.opacity = .4;
         clear.style.pointerEvents = 'none';
-        start.style.opacity = .4;
-        start.style.pointerEvents = 'none'
+        if(start === null)return
+        else{start.style.opacity = .4;
+            start.style.pointerEvents = 'none'}
+        
     }
 
     unblockButtonsAfterPause(clear, start){
@@ -115,7 +118,8 @@ class Timer {
         this.unblockButtonsAfterPause(this.controls.start, null);
         if(this.seconds === -1){
             this.controls.cock.classList.remove('move_cock');
-            this.unblockButtonsAfterPause(this.controls.pause, null);
+            this.blockButtonsAfterStart(this.controls.pause, null);
+            this.stopAudio();
         }
 
     }
@@ -133,6 +137,11 @@ class Timer {
                 this.timesPlayed++;
             }  
         })
+    }
+
+    stopAudio(){
+        this.controls.x.pause();
+        this.controls.x.currentTime = 0;
     }
 
     whenTimeIsOver(){
